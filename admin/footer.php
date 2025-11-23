@@ -16,6 +16,10 @@
 <script src="../assets/admin/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="../assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="../assets/admin/plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="../assets/admin/plugins/toastr/toastr.min.js"></script>
 <!-- DataTables  & Plugins -->
 <script src="../assets/admin/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../assets/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -40,6 +44,13 @@
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     
+
+    $('.submitUser').click(function() {
+      Toast.fire({
+        icon: 'success',
+        title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+      });
+    });
   });
 </script>
 </body>

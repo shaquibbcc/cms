@@ -18,7 +18,8 @@
       // dumper($query, true);
 
       if ($mysqli->query($query)) {
-        echo "data saved successfully!";
+        $check_msg = true;
+        // echo "data saved successfully!";
       } 
       else {
         echo "Error, Try again!";
@@ -77,6 +78,18 @@
               <!-- form start -->
               <form action="" method="POST" class="form-horizontal">
                 <div class="card-body">
+                  <?php
+                   if (isset($check_msg)) {
+                  ?>
+                  <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h5><i class="icon fas fa-success"></i> Alert!</h5>
+                    Data saved successfully!
+                  </div>
+                  <?php
+                   }
+
+                  ?>
                   <div class="form-group row">
                     <label for="name" class="col-sm-2 col-form-label">Name</label>
                     <div class="col-sm-10">
@@ -112,7 +125,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-info float-right" name="submitUser">Save</button>
+                  <button type="submit" class="btn btn-info float-right submitUser" name="submitUser">Save</button>
                   <!-- <button type="submit" class="btn btn-default float-right">Cancel</button> -->
                 </div>
                 <!-- /.card-footer -->

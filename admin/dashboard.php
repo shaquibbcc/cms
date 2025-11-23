@@ -56,6 +56,7 @@
     </section>
     <!-- /.content -->
   </div>
+  
   <!-- /.content-wrapper -->
   <?php include_once 'footer.php'; ?>
   

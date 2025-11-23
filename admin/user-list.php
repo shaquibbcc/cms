@@ -97,9 +97,9 @@
                     </tr>
                   <?php
                       }
-                    } else {
-                      echo "No records found!";
-                    }
+                    } //else {
+                      //echo "No records found!@";
+                    //}
                   ?>
                   
 
