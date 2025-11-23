@@ -1,4 +1,15 @@
+  <?php include_once 'db_config.php'; ?>
+  <?php include_once 'helper.php'; ?>
 
+  <?php 
+
+    $query = "SELECT * FROM `users`";
+    $result = $mysqli->query($query);
+    
+    $num_results = $result->num_rows;
+    // dumper($num_results);
+    
+  ?>
   <?php include_once 'header.php'; ?>
   <!-- /.navbar -->
 
@@ -54,7 +65,53 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
+                  <?php
+                    if ($num_results > 0) {
+                      while( $row = $result->fetch_assoc() ){
+                        extract($row);
+                  ?>
+                    <tr>
+                      <td><?php echo $id; ?></td>
+                      <td><?php echo $name; ?></td>
+                      <td> <?php echo $email; ?></td>
+                      <td><?php echo $mobile_no; ?></td>
+                      <td>
+                        <?php
+                          $status = ($is_active == 1) ? 'Active': 'InActive' ; 
+                          $bg_color = ($is_active == 1) ? 'success': 'danger' ; 
+                        ?>
+                        <span class="badge bg-<?php echo $bg_color; ?>"><?php echo $status; ?></span>
+                      </td>
+                      <td>
+                        <?php 
+                          // echo $created_at; // March 10, 2001
+                          $date = date_create($created_at);
+                          echo date_format($date,"M d, Y"); 
+                          ?>
+                        <!-- March 10, 2001 -->
+                      </td>
+                      <td>
+                        <a href="" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i> Edit</a>
+                        <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Del</a>
+                      </td>
+                    </tr>
+                  <?php
+                      }
+                    } else {
+                      echo "No records found!";
+                    }
+                  ?>
+                  
+
+
+
+
+
+
+
+
+
+                  <!-- <tr>
                     <td>1</td>
                     <td>
                       John Doe
@@ -95,7 +152,7 @@
                       <a href="" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i> Edit</a>
                       <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Del</a>
                     </td>
-                  </tr>
+                  </tr> -->
                   
                   
                   </tfoot>

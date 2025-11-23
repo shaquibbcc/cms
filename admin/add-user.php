@@ -1,4 +1,36 @@
 
+  <?php include_once 'db_config.php'; ?>
+  <?php include_once 'helper.php'; ?>
+
+  <?php
+
+    if (isset($_POST['submitUser'])) {
+
+      
+
+      $name = $_POST['name'];
+      $mobile_no = $_POST['mobile_no'];
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+
+      $query = "INSERT INTO `users` (`name`, `email`, `password`, `mobile_no`) VALUES ('$name', '$email', '$password', '$mobile_no');";
+
+      // dumper($query, true);
+
+      if ($mysqli->query($query)) {
+        echo "data saved successfully!";
+      } 
+      else {
+        echo "Error, Try again!";
+      }
+      
+    }
+
+
+
+
+  ?>
+
   <?php include_once 'header.php'; ?>
   <!-- /.navbar -->
 
@@ -43,7 +75,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form class="form-horizontal">
+              <form action="" method="POST" class="form-horizontal">
                 <div class="card-body">
                   <div class="form-group row">
                     <label for="name" class="col-sm-2 col-form-label">Name</label>
