@@ -22,6 +22,11 @@
             </ol>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-10">
+            <a href="add-user.php" class="btn btn-success float-right">Add New</a>
+          </div>
+        </div>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -41,9 +46,10 @@
                   <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Username</th>
                     <th>Email</th>
-                    <th>Mobile</th>
+                    <th>Mobile No.</th>
+                    <th>Status</th>
+                    <td>Created At</td>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -53,9 +59,10 @@
                     <td>
                       John Doe
                     </td>
-                    <td>john002</td>
                     <td> johndoe@gmail.com</td>
                     <td>+880 123 456 789</td>
+                    <td><span class="badge bg-success">Active</span></td>
+                    <td>March 10, 2001</td>
                     <td>
                       <a href="" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i> Edit</a>
                       <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Del</a>
@@ -66,9 +73,10 @@
                     <td>
                       John Doe
                     </td>
-                    <td>john002</td>
                     <td> johndoe@gmail.com</td>
                     <td>+880 123 456 789</td>
+                    <td><span class="badge bg-danger">InActive</span></td>
+                    <td>March 10, 2001</td>
                     <td>
                       <a href="" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i> Edit</a>
                       <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Del</a>
@@ -79,27 +87,16 @@
                     <td>
                       John Doe
                     </td>
-                    <td>john002</td>
                     <td> johndoe@gmail.com</td>
                     <td>+880 123 456 789</td>
+                    <td><span class="badge bg-success">Active</span></td>
+                    <td>March 10, 2001</td>
                     <td>
                       <a href="" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i> Edit</a>
                       <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Del</a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      John Doe
-                    </td>
-                    <td>john002</td>
-                    <td> johndoe@gmail.com</td>
-                    <td>+880 123 456 789</td>
-                    <td>
-                      <a href="" class="btn btn-outline-primary btn-sm"><i class="far fa-edit"></i> Edit</a>
-                      <a href="" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash"></i> Del</a>
-                    </td>
-                  </tr>
+                  
                   
                   </tfoot>
                 </table>
